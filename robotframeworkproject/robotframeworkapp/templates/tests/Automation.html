@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POST Request</title>
+</head>
+<body>
+    <h2>Sending POST Request...</h2>
+
+    <script>
+        // URL to send POST request to
+        const url = 'http://127.0.0.1:8000/testai/tests/v1/execute/';
+
+        // Request data (if any)
+        const requestData = {
+            // Include any data you want to send in the request
+        };
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json' // Specify JSON content type
+            },
+            body: JSON.stringify(requestData) // Convert data to JSON format
+        })
+        .then(response => {
+            // Handle response
+            console.log('Response received:', response);
+        })
+        .catch(error => {
+            // Handle error
+            console.error('Error occurred:', error);
+        });
+    </script>
+</body>
+</html>
